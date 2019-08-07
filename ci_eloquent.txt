@@ -1,0 +1,29 @@
+1. CI 3.1.10
+2. composer.json at application folder
+      "require": {
+            "php": ">=5.6.3",
+            "illuminate/database": "^5.2.45",
+            "symfony/var-dumper": "^3.4.30"
+        },
+       composer install
+3 database.php 
+    use Illuminate\Database\Capsule\Manager as Capsule;
+    $active_group = 'default';
+    $query_builder = TRUE;
+    $capsule = new Capsule;
+    $capsule->addConnection([
+        'driver'    => 'mysql',
+        'host'      => $db['default']['hostname'],
+        'database'  => $db['default']['database'],
+        'username'  => $db['default']['username'],
+        'password'  => $db['default']['password'],
+        'charset'   => $db['default']['char_set'],
+        'collation' => $db['default']['dbcollat'],
+        'prefix'    => $db['default']['dbprefix'],
+    ]);
+    $capsule->setAsGlobal();
+    $capsule->bootEloquent();
+
+4. /application/config   $config['composer_autoload'] = TRUE;
+
+
