@@ -21,12 +21,13 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		$t =  $this->Test::get();
-		$this->load->helper('new_helper');
-		echo test_method('aaaaa');
-		$this->load->helper('Test');
-		Test();
-		$this->load->library('pro');
-        echo $this->pro->show_hello_world();
+		dump($t);
+		// $this->load->helper('new_helper');
+		// echo test_method('aaaaa');
+		// $this->load->helper('Test');
+		// Test();
+		// $this->load->library('pro');
+        // echo $this->pro->show_hello_world();
 		// $this->load->view('welcome_message');
 	}
 }
